@@ -7,7 +7,11 @@ require("dotenv").config();
 connectDatabase();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://doctor-appointment-syste-7b5fc.web.app"],
+  })
+);
 
 const userRoute = require("./routes/userRoute");
 const adminRoute = require("./routes/adminRoute");
